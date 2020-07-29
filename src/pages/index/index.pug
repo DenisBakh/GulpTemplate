@@ -1,0 +1,47 @@
+include ../../components/blocks/header/header.pug
+include ../../components/blocks/footer/footer.pug
+
+
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+		link(rel="icon" href="assets/img/favicon.ico")
+		link(rel="stylesheet", href="css/common.css")
+		link(rel="stylesheet", href="css/index.css")
+		title='Главная'
+	body
+		.wrapper
+			-
+				const headerMenu = [
+					{text: 'text1', link:'#',submenu:[
+						{subText: 'text3', subLink: '#'},
+						{subText: 'text4', subLink: 'https://www.google.com/'}, 
+						{subText: 'text5', subLink: '#'}
+						]}, 
+					{text: 'text2', link:'#',submenu:''}, 
+					//{text: 'Соглашения', link:'#',submenu:[{subText: 'Правила', subLink: '#'},{subText: 'Правила', subLink: 'https://www.google.com/'}, {subText: 'Правила', subLink: '#'}]}
+				]
+			+header('unlogged', headerMenu, false)
+			.section.header
+			.header
+			.header
+
+
+			main.main
+				h1 asssd
+			-
+				const footerMenu = [
+					{text: 'текст1', link:'about.html'}, 
+					{text: 'text2', link:'#'}, 
+					{text: 'text3', link:'#'}, 
+				]
+			-const footerCopyRight='footerCopyRight'
+			+footer(footerMenu,footerCopyRight)
+		
+		script(src='js/app.min.js')
+
+
+
